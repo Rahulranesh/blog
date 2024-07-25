@@ -38,6 +38,7 @@ dependencies:
   flutter_neumorphic_plus: ^3.4.0
   pull_to_refresh_flutter3: ^2.0.2
   provider: ^6.1.2
+  http: ^1.2.2
 
 
 dev_dependencies:
