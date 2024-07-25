@@ -1,4 +1,5 @@
 import 'package:blogging/pages/home_page.dart';
+import 'package:blogging/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
@@ -14,8 +15,15 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
+  final AuthService authService = AuthService();
 
-  void registerUser() {}
+  void registerUser() {
+    authService.registerUser(
+        context: context,
+        email: emailController.text,
+        name: nameController.text,
+        password: passwordController.text);
+  }
 
   @override
   Widget build(BuildContext context) {

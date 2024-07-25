@@ -1,5 +1,6 @@
 import 'package:blogging/pages/home_page.dart';
 import 'package:blogging/pages/login_page.dart';
+import 'package:blogging/providers/user_provider.dart';
 import 'package:blogging/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
@@ -11,6 +12,9 @@ void main() async {
       providers: [
         ChangeNotifierProvider(
           create: (context) => ThemeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UserProvider(),
         ),
       ],
       child: MyApp(),
