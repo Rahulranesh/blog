@@ -1,10 +1,21 @@
 import 'package:blogging/pages/home_page.dart';
 import 'package:blogging/pages/login_page.dart';
+import 'package:blogging/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -28,6 +39,7 @@ class MyApp extends StatelessWidget {
         depth: 6,
       ),
       home: LoginPage(),
+      materialTheme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
