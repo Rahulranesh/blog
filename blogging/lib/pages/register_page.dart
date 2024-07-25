@@ -1,9 +1,21 @@
+import 'package:blogging/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+
+  void registerUser() {}
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +78,9 @@ class RegisterPage extends StatelessWidget {
                 //color: Colors.grey
               ),
               child: TextField(
+                controller: nameController,
                 decoration: InputDecoration(
-                  hintText: 'Enter Email ',
+                  hintText: 'Enter Name',
                   contentPadding: EdgeInsets.only(
                     left: 10,
                   ),
@@ -92,13 +105,14 @@ class RegisterPage extends StatelessWidget {
                 //color: Colors.grey
               ),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
-                  hintText: 'Enter Password',
+                  hintText: 'Enter Email',
                   contentPadding: EdgeInsets.only(
                     left: 10,
                   ),
                 ),
-                obscureText: true,
+                obscureText: false,
               ),
             ),
 
@@ -118,8 +132,9 @@ class RegisterPage extends StatelessWidget {
                 //color: Colors.grey
               ),
               child: TextField(
+                controller: passwordController,
                 decoration: InputDecoration(
-                  hintText: 'Confirm Password',
+                  hintText: 'Enter Password',
                   contentPadding: EdgeInsets.only(
                     left: 10,
                   ),
@@ -132,15 +147,7 @@ class RegisterPage extends StatelessWidget {
               height: 30,
             ),
             NeumorphicButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return RegisterPage();
-                    },
-                  ),
-                );
-              },
+              onPressed: registerUser,
               child: Container(
                 width: 120,
                 height: 30,
