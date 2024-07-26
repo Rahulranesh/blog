@@ -1,3 +1,5 @@
+import 'package:blogging/components/my_button.dart';
+import 'package:blogging/components/my_textfield.dart';
 import 'package:blogging/pages/home_page.dart';
 import 'package:blogging/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -76,106 +78,31 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(
               height: 40,
             ),
-            Neumorphic(
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.concave,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: -4,
-                lightSource: LightSource.topLeft,
-                //color: Colors.grey
-              ),
-              child: TextField(
-                controller: nameController,
-                decoration: InputDecoration(
-                  hintText: 'Enter Name',
-                  contentPadding: EdgeInsets.only(
-                    left: 10,
-                  ),
-                ),
-              ),
+            MyTextField(
+              controller: nameController,
+              hintText: ' Enter a name',
+              obscureText: false,
             ),
-
-            //....
-
-            //....
-
             SizedBox(
               height: 30,
             ),
-            Neumorphic(
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.concave,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: -4,
-                lightSource: LightSource.topLeft,
-                //color: Colors.grey
-              ),
-              child: TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                  hintText: 'Enter Email',
-                  contentPadding: EdgeInsets.only(
-                    left: 10,
-                  ),
-                ),
-                obscureText: false,
-              ),
+            MyTextField(
+              controller: emailController,
+              hintText: 'Enter a email',
+              obscureText: false,
             ),
-
-            //....
-
-            //.....
             SizedBox(
               height: 30,
             ),
-            Neumorphic(
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.concave,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: -4,
-                lightSource: LightSource.topLeft,
-                //color: Colors.grey
-              ),
-              child: TextField(
-                controller: passwordController,
-                decoration: InputDecoration(
-                  hintText: 'Enter Password',
-                  contentPadding: EdgeInsets.only(
-                    left: 10,
-                  ),
-                ),
-                obscureText: true,
-              ),
+            MyTextField(
+              controller: passwordController,
+              hintText: 'Enter a password',
+              obscureText: true,
             ),
-
             SizedBox(
               height: 30,
             ),
-            NeumorphicButton(
-              onPressed: registerUser,
-              child: Container(
-                width: 120,
-                height: 30,
-                child: Center(
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.flat,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: 8,
-                lightSource: LightSource.topLeft,
-              ),
-            ),
+            MyButton(onPressed: registerUser, text: 'Register'),
           ],
         ),
       ),

@@ -1,3 +1,5 @@
+import 'package:blogging/components/my_button.dart';
+import 'package:blogging/components/my_textfield.dart';
 import 'package:blogging/pages/home_page.dart';
 import 'package:blogging/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,59 +44,23 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 40,
             ),
-            Neumorphic(
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.concave,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: -4,
-                lightSource: LightSource.topLeft,
-                //color: Colors.grey
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter Email ',
-                  contentPadding: EdgeInsets.only(
-                    left: 10,
-                  ),
-                ),
-              ),
+            MyTextField(
+              controller: emailController,
+              hintText: 'Enter Email',
+              obscureText: false,
             ),
-
-            //....
-
-            //....
-
             SizedBox(
               height: 30,
             ),
-            Neumorphic(
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.concave,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: -4,
-                lightSource: LightSource.topLeft,
-                //color: Colors.grey
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter Password',
-                  contentPadding: EdgeInsets.only(
-                    left: 10,
-                  ),
-                ),
-                obscureText: true,
-              ),
+            MyTextField(
+              controller: passwordController,
+              hintText: 'Enter Password',
+              obscureText: true,
             ),
-
-            //....
-
-            //.....
             SizedBox(
               height: 30,
             ),
-            NeumorphicButton(
+            MyButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -99,28 +68,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 );
               },
-              child: Container(
-                width: 150,
-                height: 30,
-                child: Center(
-                  child: Text(
-                    'Login',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.flat,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
-                depth: 8,
-                lightSource: LightSource.topLeft,
-              ),
+              text: 'Login',
             ),
-
-            //....
-
-            //....
             SizedBox(
               height: 30,
             ),
@@ -128,9 +77,7 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) {
-                      return RegisterPage();
-                    },
+                    builder: (context) => RegisterPage(),
                   ),
                 );
               },
