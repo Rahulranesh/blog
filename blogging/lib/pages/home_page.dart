@@ -1,4 +1,5 @@
 import 'package:blogging/components/drawer.dart';
+import 'package:blogging/components/my_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
@@ -14,39 +15,59 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerWidget(),
-      backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: NeumorphicAppBar(
-        title: Text(
-          'B L O G ',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        drawer: DrawerWidget(),
+        backgroundColor: Theme.of(context).colorScheme.background,
+        appBar: NeumorphicAppBar(
+          title: Text(
+            'B L O G ',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: Builder(builder: (context) {
+            return NeumorphicButton(
+              child: Icon(Icons.person_2),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }),
+          actions: [
+            NeumorphicButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                Navigator.pushNamed(context, '/uploadpostpage');
+              },
+            ),
+          ],
         ),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        leading: Builder(builder: (context) {
-          return NeumorphicButton(
-            child: Icon(Icons.person_2),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
-        actions: [
-          NeumorphicButton(
-            child: Icon(Icons.add),
-            onPressed: () {
-              Navigator.pushNamed(context, '/uploadpostpage');
-            },
-          ),
-        ],
-      ),
 
-      // C O N T I N U E    H E R E   S I R I K A
-      body: Column(
-        children: [],
-      ),
-    );
+        // C O N T I N U E    H E R E   S I R I K A
+        body: ListView(
+          children: [
+            Container(
+              height: 50,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  MyButton(onPressed: () {}, text: 'Flutter'),
+                  SizedBox(width: 5),
+                  MyButton(onPressed: () {}, text: "Flutter"),
+                  SizedBox(width: 5),
+                  MyButton(onPressed: () {}, text: 'Flutter'),
+                  SizedBox(width: 5),
+                  MyButton(onPressed: () {}, text: 'Flutter'),
+                  SizedBox(width: 5),
+                  MyButton(onPressed: () {}, text: 'Flutter'),
+                  SizedBox(width: 5),
+                  MyButton(onPressed: () {}, text: 'Flutter'),
+                  SizedBox(width: 5),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
