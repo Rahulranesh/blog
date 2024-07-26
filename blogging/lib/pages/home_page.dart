@@ -25,6 +25,9 @@ class _HomePageState extends State<HomePage> {
         actions: [
           NeumorphicButton(
             child: Icon(Icons.add),
+            onPressed: () {
+              Navigator.pushNamed(context, '/uploadpostpage');
+            },
           ),
         ],
       ),

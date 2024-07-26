@@ -1,5 +1,6 @@
 import 'package:blogging/pages/home_page.dart';
 import 'package:blogging/pages/login_page.dart';
+import 'package:blogging/pages/uploadpost_page.dart';
 import 'package:blogging/providers/user_provider.dart';
 import 'package:blogging/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,9 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginPage(),
       materialTheme: Provider.of<ThemeProvider>(context).themeData,
+      routes: {
+        '/uploadpostpage': (context) => Uploadpostpage(),
+      },
     );
   }
 }
