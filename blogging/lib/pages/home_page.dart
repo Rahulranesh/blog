@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             'B L O G ',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.secondary),
+                color: Theme.of(context).colorScheme.inversePrimary),
           ),
           centerTitle: true,
           automaticallyImplyLeading: false,

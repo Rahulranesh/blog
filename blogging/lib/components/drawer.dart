@@ -1,4 +1,5 @@
 import "package:blogging/pages/login_page.dart";
+import "package:blogging/pages/profile_page.dart";
 import "package:blogging/pages/setting_page.dart";
 
 import "package:flutter/material.dart";
@@ -53,6 +54,16 @@ class DrawerWidget extends StatelessWidget {
               hovercolor: Theme.of(context).colorScheme.secondary,
               onClicked: () => selectedItem(context, 2),
             ),
+            SizedBox(
+              height: 16,
+            ),
+            buildMenuItem(
+              text: 'Edit profile',
+              icon: Icons.person_add,
+              color: Theme.of(context).colorScheme.inversePrimary,
+              hovercolor: Theme.of(context).colorScheme.secondary,
+              onClicked: () => selectedItem(context, 3),
+            )
           ],
         ),
       ),
@@ -88,6 +99,11 @@ class DrawerWidget extends StatelessWidget {
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => LoginPage(),
+        ));
+        break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => Profilepage(),
         ));
         break;
     }
