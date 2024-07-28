@@ -23,23 +23,27 @@ class _SettingsState extends State<Settings> {
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            'DARK MODE',
-            style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.inversePrimary),
-          ),
-          const SizedBox(
-              height: 10), // Add some space between the text and the switch
-          CupertinoSwitch(
-            value: Provider.of<ThemeProvider>(context).isDarkMode,
-            onChanged: (value) =>
-                Provider.of<ThemeProvider>(context, listen: false)
-                    .toggleTheme(),
-          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Text(
+              'DARK MODE',
+              style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.inversePrimary),
+            ),
+
+            const SizedBox(
+                height: 10), // Add some space between the text and the switch
+            CupertinoSwitch(
+              value: Provider.of<ThemeProvider>(context).isDarkMode,
+              onChanged: (value) =>
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .toggleTheme(),
+            ),
+          ])
         ],
       ),
     );
