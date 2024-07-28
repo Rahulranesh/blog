@@ -21,8 +21,8 @@ class _HomePageState extends State<HomePage> {
           title: Text(
             'B L O G ',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.secondary),
           ),
           centerTitle: true,
           automaticallyImplyLeading: false,
