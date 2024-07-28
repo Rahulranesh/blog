@@ -85,14 +85,14 @@ class _UploadpostpageState extends State<Uploadpostpage> {
               //color: Colors.grey
             ),
             child: DropdownButtonFormField<int>(
-              iconEnabledColor: Theme.of(context).colorScheme.secondary,
+              iconEnabledColor: Theme.of(context).colorScheme.primary,
               onChanged: (i) {},
               items: [
                 DropdownMenuItem(
                   child: Text(
                     "Flutter",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary),
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.primary),
                   ),
                   value: 1,
                 )
