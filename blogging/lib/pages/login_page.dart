@@ -22,14 +22,17 @@ class _LoginPageState extends State<LoginPage> {
       appBar: NeumorphicAppBar(
         title: Text(
           'L O G I N',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.inversePrimary),
         ),
         leading: Icon(
           Icons.newspaper,
+          color: Theme.of(context).colorScheme.inversePrimary,
         ),
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         padding: EdgeInsets.all(15),
         child: Column(
@@ -40,6 +43,7 @@ class _LoginPageState extends State<LoginPage> {
             Icon(
               Icons.article_rounded,
               size: 40,
+              color: Theme.of(context).colorScheme.inversePrimary,
             ),
             SizedBox(
               height: 40,
@@ -87,7 +91,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: Center(
                   child: Text(
                     'Register',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.primary),
                   ),
                 ),
               ),

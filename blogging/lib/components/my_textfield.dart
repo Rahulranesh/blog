@@ -28,6 +28,7 @@ class MyTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           hintText: hintText,
+          hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
           contentPadding: EdgeInsets.only(
             left: 10,
           ),

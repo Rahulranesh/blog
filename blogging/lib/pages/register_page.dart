@@ -34,12 +34,12 @@ class _RegisterPageState extends State<RegisterPage> {
         title: Text(
           'R E G I S T E R',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.inversePrimary),
         ),
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         padding: EdgeInsets.all(15),
         child: Column(
@@ -47,6 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Icon(
               Icons.app_registration_rounded,
               size: 40,
+              color: Theme.of(context).colorScheme.inversePrimary,
             ),
             SizedBox(
               height: 20,
@@ -66,10 +67,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     Icon(
                       Icons.person,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                     Text(
                       'Upload \n Photo',
                       textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary),
                     ),
                   ],
                 ),

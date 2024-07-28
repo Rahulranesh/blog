@@ -42,6 +42,7 @@ class _UploadpostpageState extends State<Uploadpostpage> {
                 children: [
                   Icon(
                     Icons.photo,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   SizedBox(
                     height: 20,
@@ -49,6 +50,8 @@ class _UploadpostpageState extends State<Uploadpostpage> {
                   Text(
                     'Upload \n Photo',
                     textAlign: TextAlign.center,
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.primary),
                   ),
                 ],
               ),
@@ -82,15 +85,22 @@ class _UploadpostpageState extends State<Uploadpostpage> {
               //color: Colors.grey
             ),
             child: DropdownButtonFormField<int>(
+              iconEnabledColor: Theme.of(context).colorScheme.secondary,
               onChanged: (i) {},
               items: [
                 DropdownMenuItem(
-                  child: Text("Flutter"),
+                  child: Text(
+                    "Flutter",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary),
+                  ),
                   value: 1,
                 )
               ],
               decoration: InputDecoration(
                 hintText: 'Select category',
+                hintStyle:
+                    TextStyle(color: Theme.of(context).colorScheme.primary),
                 contentPadding: EdgeInsets.only(
                   left: 10,
                 ),
